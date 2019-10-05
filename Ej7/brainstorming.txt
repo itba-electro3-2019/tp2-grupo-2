@@ -1,2 +1,15 @@
 Brainstorming:
-	-Nothing here yet
+	-Ver si me sirve de algo hacer diagramas temporales en GTKWave o algo en Verilog, no creo
+	-Sincrónico: ponerle Enable, Clear, 
+	-Si hago el sincrónico con FFD: poner salida Z (vale 1 cuando termina) y poder setear un valor inicial a los contadores
+	-Terminar de leer Capítulo 5.10 y 5.11 para sacar ideas, me quedé en la pag. 274 (se puede ir directo a la 276)
+
+Errores que busco:
+	*Contador asincrónico: 
+		-Ver/medir tiempo de propagación hasta el último bit
+		-Buscar máxima velocidad de operación y qué pasa cuando me excedo
+
+	*Contador sincrónico:
+		-Ver si puedo medir algo de la propagación por las AND's que unen los FFT
+		-Buscar máxima velocidad de operación y qué pasa cuando me excedo
+

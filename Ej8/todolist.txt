@@ -1,0 +1,6 @@
+Todolist:
+	-Tirar ideas de cómo carajo hacerlo, y ver si le queremos/podemos agregar ciertos features al ej
+	-Simular en verilog! Aprovechar GTKWave
+	-Placa
+	-Medir
+	-Informe
