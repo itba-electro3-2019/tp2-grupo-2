@@ -1,6 +1,13 @@
+﻿ME ESTOY TRABANDO:
+	1) ¿Qué FFD uso? Ver lo de clear y reset
+	2) ¿Footprint Flip-flop D? D014_N o N014D para sn74ls74
+	3) ¿¿IC con XOR??
+	4) ¿De donde saco el binary -> 7 segmentos?¿y el 7 segmentos?¿como lo conecto, como no lo sueldo?
+	5) ¿Hago una o dos placas? Si es una, ¿como me aseguro que un circuito no afecte al otro?
+
 Brainstorming:
-	-Ver si me sirve de algo hacer diagramas temporales en GTKWave o algo en Verilog, no creo
-	-Sincrónico: ponerle Enable, Clear, 
+	-Capaz hacer alguna simulación temporal para poner en el informe
+	-Sincrónico: ponerle Enable, Clear
 	-Si hago el sincrónico con FFD: poner salida Z (vale 1 cuando termina) y poder setear un valor inicial a los contadores
 	-Terminar de leer Capítulo 5.10 y 5.11 para sacar ideas, me quedé en la pag. 274 (se puede ir directo a la 276)
 
@@ -12,4 +19,10 @@ Errores que busco:
 	*Contador sincrónico:
 		-Ver si puedo medir algo de la propagación por las AND's que unen los FFT
 		-Buscar máxima velocidad de operación y qué pasa cuando me excedo
+
+Links:
+https://www.researchgate.net/post/How_to_modify_a_four_bit_synchronous_counter_with_D_flip_flops_problem
+https://electronics.stackexchange.com/questions/285136/what-is-the-difference-between-7474-and-7479-ics-how-do-they-differ-from-4013
+https://www.forosdeelectronica.com/threads/%C2%BFc%C3%B3mo-sustituir-el-cd4013-por-el-74ls74.139338/
+Para el display: https://www.electronics-tutorials.ws/combination/comb_6.html
 
