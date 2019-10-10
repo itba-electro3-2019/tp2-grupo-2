@@ -1,12 +1,10 @@
-﻿ME ESTOY TRABANDO:
-	1) La XOR es open collector, ¿qué hago?
-	2) ¿Como pongo caps de desacople en altium?
+﻿ME TRABA:
+	1) pongo bornera o pines??? Si pines, ¿¿como??
 
-Brainstorming:
-	-Capaz hacer alguna simulación temporal para poner en el informe
-	-Sincrónico: ponerle Enable, Clear
-	-Si hago el sincrónico con FFD: poner salida Z (vale 1 cuando termina) y poder setear un valor inicial a los contadores
-	-Terminar de leer Capítulo 5.10 y 5.11 para sacar ideas, me quedé en la pag. 274 (se puede ir directo a la 276)
+Para el final del ruteo:
+	1) Agregar cartelito itba si hay lugar
+	2) Cambiar nombre al string del display
+	3) Cambiar 
 
 Errores que busco:
 	*Contador asincrónico: 
