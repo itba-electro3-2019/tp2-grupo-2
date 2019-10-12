@@ -10,4 +10,8 @@
 
 edge detector alternativo: https://rtldigitaldesign.blogspot.com/2014/06/pos-n-neg-edge-detector.html
 
+Para hacer BCD counter: http://www.edutek.ltd.uk/CBricks_Pages/Counter_BCD.html
+
+Para hacer comparador: http://www.learningaboutelectronics.com/Articles/LM311-voltage-comparator-circuit.php
+
 para hacer la triangular (nico): https://www.electroschematics.com/555-triangle-waveform-generator/
