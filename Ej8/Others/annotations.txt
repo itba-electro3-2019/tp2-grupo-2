@@ -1,0 +1,30 @@
+﻿Todolist:
+	- Hacer clock de 5kHz con 555, con formula para preset	
+	- Hacer triangular de 50Hz con formula de frec para preset
+	- Restarle 5V a la triangular
+	- Hacer cuentas de clock de frecuencia variable entre 1 y 20 Hz
+	- ¿Como generamos una triangular de 0 a 5V y frecuencia 50Hz?
+	- Simular en verilog! Aprovechar GTKWave
+	- Placa
+	- Medir
+	- Informe
+
+edge detector alternativo: https://rtldigitaldesign.blogspot.com/2014/06/pos-n-neg-edge-detector.html
+
+Para hacer BCD counter: http://www.edutek.ltd.uk/CBricks_Pages/Counter_BCD.html
+
+Para hacer comparador: http://www.learningaboutelectronics.com/Articles/LM311-voltage-comparator-circuit.php
+
+About open collector: http://www.learningaboutelectronics.com/Articles/Open-collector-output.php
+
+*555:
+	-Clave para entender el 555: http://picmania.garcia-cuervo.net/electronica_basica_555.php
+	-Clock con 555 Wikipedia Ingles: https://en.wikipedia.org/wiki/555_timer_IC#Astable
+	-Triangular con 555: https://www.youtube.com/watch?v=1yoIpUFNG68&t=315s
+	-Mas sobre el 555: https://www.rinconingenieril.es/555-astable/
+
+Triangular con opamps: http://www.circuitstoday.com/triangular-wave-generator
+
+Para seguir buscando: https://www.google.com/search?q=555+astable+formula&oq=555+astable&aqs=chrome.1.69i57j0l4j69i60.4393j0j7&sourceid=chrome&ie=UTF-8
+
+para hacer la triangular (nico): https://www.electroschematics.com/555-triangle-waveform-generator/
