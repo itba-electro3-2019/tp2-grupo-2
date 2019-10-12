@@ -1,6 +1,4 @@
-﻿para hacer la triangular: https://www.electroschematics.com/555-triangle-waveform-generator/
-
-Todolist:
+﻿Todolist:
 	- Hacer 2 clocks de frecuencias 50Hz (para integrarlo) y 5kHz con 555
 	- Hacer clock de frecuencia variable entre 1 y 20 Hz
 	- ¿Como generamos una triangular de 0 a 5V y frecuencia 50Hz?
@@ -8,3 +6,8 @@ Todolist:
 	- Placa
 	- Medir
 	- Informe
+
+
+edge detector alternativo: https://rtldigitaldesign.blogspot.com/2014/06/pos-n-neg-edge-detector.html
+
+para hacer la triangular (nico): https://www.electroschematics.com/555-triangle-waveform-generator/
