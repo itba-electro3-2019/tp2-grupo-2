@@ -1,0 +1,83 @@
+Added Component: Designator=Dec(DIP16)
+Added Component: Designator=Disp(A)
+Added Component: Designator=IN(HDR2X5)
+Added Component: Designator=R2(0805)
+Added Component: Designator=R3(0805)
+Added Component: Designator=R4(0805)
+Added Component: Designator=R5(0805)
+Added Component: Designator=R6(0805)
+Added Component: Designator=R7(0805)
+Added Component: Designator=R8(0805)
+Added Pin To Net: NetName=CLK Pin=Dec-5
+Added Pin To Net: NetName=CLK Pin=IN-3
+Added Net: Name=CLK
+Added Pin To Net: NetName=GND Pin=Dec-8
+Added Pin To Net: NetName=GND Pin=Disp-1
+Added Pin To Net: NetName=GND Pin=Disp-6
+Added Pin To Net: NetName=GND Pin=Disp-7
+Added Pin To Net: NetName=GND Pin=IN-5
+Added Pin To Net: NetName=GND Pin=IN-7
+Added Pin To Net: NetName=GND Pin=IN-9
+Added Pin To Net: NetName=GND Pin=IN-10
+Added Net: Name=GND
+Added Pin To Net: NetName=NetDec_9 Pin=Dec-9
+Added Pin To Net: NetName=NetDec_9 Pin=R6-1
+Added Net: Name=NetDec_9
+Added Pin To Net: NetName=NetDec_10 Pin=Dec-10
+Added Pin To Net: NetName=NetDec_10 Pin=R5-1
+Added Net: Name=NetDec_10
+Added Pin To Net: NetName=NetDec_11 Pin=Dec-11
+Added Pin To Net: NetName=NetDec_11 Pin=R4-1
+Added Net: Name=NetDec_11
+Added Pin To Net: NetName=NetDec_12 Pin=Dec-12
+Added Pin To Net: NetName=NetDec_12 Pin=R3-1
+Added Net: Name=NetDec_12
+Added Pin To Net: NetName=NetDec_13 Pin=Dec-13
+Added Pin To Net: NetName=NetDec_13 Pin=R2-1
+Added Net: Name=NetDec_13
+Added Pin To Net: NetName=NetDec_14 Pin=Dec-14
+Added Pin To Net: NetName=NetDec_14 Pin=R8-1
+Added Net: Name=NetDec_14
+Added Pin To Net: NetName=NetDec_15 Pin=Dec-15
+Added Pin To Net: NetName=NetDec_15 Pin=R7-1
+Added Net: Name=NetDec_15
+Added Pin To Net: NetName=NetDisp_2 Pin=Disp-2
+Added Pin To Net: NetName=NetDisp_2 Pin=R7-2
+Added Net: Name=NetDisp_2
+Added Pin To Net: NetName=NetDisp_3 Pin=Disp-3
+Added Pin To Net: NetName=NetDisp_3 Pin=R8-2
+Added Net: Name=NetDisp_3
+Added Pin To Net: NetName=NetDisp_4 Pin=Disp-4
+Added Pin To Net: NetName=NetDisp_4 Pin=R6-2
+Added Net: Name=NetDisp_4
+Added Pin To Net: NetName=NetDisp_5 Pin=Disp-5
+Added Pin To Net: NetName=NetDisp_5 Pin=R5-2
+Added Net: Name=NetDisp_5
+Added Pin To Net: NetName=NetDisp_8 Pin=Disp-8
+Added Pin To Net: NetName=NetDisp_8 Pin=R4-2
+Added Net: Name=NetDisp_8
+Added Pin To Net: NetName=NetDisp_9 Pin=Disp-9
+Added Pin To Net: NetName=NetDisp_9 Pin=R3-2
+Added Net: Name=NetDisp_9
+Added Pin To Net: NetName=NetDisp_10 Pin=Disp-10
+Added Pin To Net: NetName=NetDisp_10 Pin=R2-2
+Added Net: Name=NetDisp_10
+Added Pin To Net: NetName=Q0 Pin=Dec-7
+Added Pin To Net: NetName=Q0 Pin=IN-2
+Added Net: Name=Q0
+Added Pin To Net: NetName=Q1 Pin=Dec-1
+Added Pin To Net: NetName=Q1 Pin=IN-4
+Added Net: Name=Q1
+Added Pin To Net: NetName=Q2 Pin=Dec-2
+Added Pin To Net: NetName=Q2 Pin=IN-6
+Added Net: Name=Q2
+Added Pin To Net: NetName=Q3 Pin=Dec-6
+Added Pin To Net: NetName=Q3 Pin=IN-8
+Added Net: Name=Q3
+Added Pin To Net: NetName=VCC Pin=Dec-3
+Added Pin To Net: NetName=VCC Pin=Dec-4
+Added Pin To Net: NetName=VCC Pin=Dec-16
+Added Pin To Net: NetName=VCC Pin=IN-1
+Added Net: Name=VCC
+Added Class: Name=7segments
+Added Room: Name=7segments

@@ -1,0 +1,9 @@
+﻿para hacer la triangular: https://www.electroschematics.com/555-triangle-waveform-generator/
+
+
+
+Todolist:
+	-Simular en verilog! Aprovechar GTKWave
+	-Placa
+	-Medir
+	-Informe

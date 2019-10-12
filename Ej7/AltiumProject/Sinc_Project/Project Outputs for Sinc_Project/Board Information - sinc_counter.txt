@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : X:\Users\emilia\Desktop\ITBA\3er año\Electronica 3\TP2\tp2-grupo-2\Ej7\AltiumProject\Sinc_Project\sinc_counter.PcbDoc
+Date         : 10/11/2019
+Time         : 2:31:14 PM
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 56
+    Connections routed, 56
+    Connections remaining, 0
+count : 4
