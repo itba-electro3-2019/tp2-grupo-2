@@ -1,13 +1,20 @@
 ﻿Todolist:
-	- Hacer clock de 5kHz con 555, con formula para preset	
-	- Hacer triangular de 50Hz con formula de frec para preset
-	- Restarle 5V a la triangular
-	- Hacer cuentas de clock de frecuencia variable entre 1 y 20 Hz
-	- ¿Como generamos una triangular de 0 a 5V y frecuencia 50Hz?
-	- Simular en verilog! Aprovechar GTKWave
-	- Placa
-	- Medir
-	- Informe
+	* Circuito: 
+		- Decidir valores de resistencia, capacitor y preset para CLK1 de 10kHz	
+		- Decidir valores de resistencia, capacitor y preset para CLK2 + triang de 50Hz: ¿como lo cargamos por corriente?
+		- Dedidir valores de resistencias del restador de 5V
+		- Decidir valores de resistencias, capacitor y ¿preset? de CLK3 de 1 a 20Hz
+		- Ver como hacer edge detector con alimentacion 0-15V
+		- Ver que tension sale del joystick
+	* Verilog:
+		- Decidir qué vamos a simular exactamente
+		- Simular en verilog! Aprovechar GTKWave
+	* PCB:
+		- Decidir como armar las placas
+		- Rutear (va a llevar 1 dia)
+		- Hacer la placa
+	* Informe
+	* Probar que ande
 
 edge detector alternativo: https://rtldigitaldesign.blogspot.com/2014/06/pos-n-neg-edge-detector.html
 
