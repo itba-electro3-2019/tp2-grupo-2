@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=bit5 Pin=P1-2
+Removed Pin From Net: NetName=bit6 Pin=P1-4
+Removed Pin From Net: NetName=bit2 Pin=P1-5
+Removed Pin From Net: NetName=bit7 Pin=P1-6
+Removed Pin From Net: NetName=bit3 Pin=P1-7
+Removed Pin From Net: NetName=Vcc Pin=P1-8
+Removed Pin From Net: NetName=bit4 Pin=P1-9
+Added Pin To Net: NetName=bit2 Pin=P1-2
+Added Pin To Net: NetName=bit3 Pin=P1-4
+Added Pin To Net: NetName=bit4 Pin=P1-5
+Added Pin To Net: NetName=bit6 Pin=P1-6
+Added Pin To Net: NetName=bit5 Pin=P1-7
+Added Pin To Net: NetName=bit7 Pin=P1-8
+Added Pin To Net: NetName=Vcc Pin=P1-9
+Added Room: Name=display

@@ -8,12 +8,14 @@ ESTAMOS CONFIANDO EN:
 -TL082P es la que va
 -LM339AJ VA.
 -Sin cap de desacople entre - de comparator y ground.
+-LM7805 puede utilizar input 15V.
+-Proteus esta pifiando y el 555 anda bien a 10kHz.
+-Confiamos en que funciona la triangular.
+
 
 
 TODO:
--Valores de clock3.
--Ver que cosas poner smd
--Recordar que los header 5x2 tienen que estar igual para facil conexion.
--Checkear patitas de transistores en pcb.
--Valores restador.
 -controlar en pcb que not esten a v5 y no vcc.
+-Reveer valores clock 3.
+-juntar restador con clock2
+-Checkear tema alimentaciones para que todos los bits de entrada sean de 5V.

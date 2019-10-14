@@ -1,0 +1,7 @@
+Change Component Comment : Designator=500k Old Comment=R17 New Comment=500k
+Change Component Comment : Designator=15k Old Comment=R18 New Comment=15k
+Change Component Designator: OldDesignator=15k NewDesignator=R18
+Change Component Designator: OldDesignator=500k NewDesignator=R17
+Change Net Name : Old Net Name=Net15k_1 New Net Name=NetR17_2
+Change Net Name : Old Net Name=Net15k_2 New Net Name=NetR16_1
+Added Room: Name=display
