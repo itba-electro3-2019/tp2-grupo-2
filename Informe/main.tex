@@ -1,0 +1,278 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{todonotes}
+\usepackage{subcaption}
+
+% Setup of packages used
+\usepackage[onehalfspacing]{setspace}		% One half spacing
+\newlength{\stockheight}					% To prevent hyperref warning
+\setlength{\stockheight}{\paperheight}		% define \stockheigh
+\usepackage{hyperref}					% Hyperlinks on pdf (Should be called before Geometry)
+\usepackage[a4paper, 					% Page Layout
+                     %showframe,				% This shows the frame
+                     includehead,
+                     footskip=7mm, headsep=6mm, headheight=4.8mm,
+                     marginparsep=2mm, marginparwidth=22mm,
+                     top=25mm, bottom=25mm, inner=30mm, outer=25mm]{geometry}
+\usepackage{sansmathfonts}				% Sans Serif equations
+\usepackage[T1]{fontenc}					% Output font encoding for internationa
+
+\usepackage[utf8]{inputenc}			% Encoding of files: utf8
+\renewcommand*\familydefault{\sfdefault} 	% Sans Serif as default font
+\usepackage{titlesec}					% Redefine chapter and chapter* titles
+\titleformat{\chapter}[display]{\huge \bfseries}{\vspace{-0.5cm}\hfill \chaptertitlename\ \thechapter}{0pt}{\hfill}[{\titlerule[1.2pt]}]
+\titleformat{name=\chapter,numberless}[display]{\huge \bfseries}{\vspace{-0.5cm}}{0pt}{\hfill}[{\titlerule[1.2pt]}]
+
+% This is used to include the page number on footer within the same margins
+%\titleformat{\chapter}[display]{\huge \bfseries}{\vspace{-0.5cm}\hfill \chaptertitlename\ \thechapter}{0pt}{\hfill}[{\titlerule[1.2pt] \enlargethispage{-0.75\baselineskip}}]
+%\titleformat{name=\chapter,numberless}[display]{\huge \bfseries}{\vspace{-0.5cm}}{0pt}{\hfill}[{\titlerule[1.2pt] \enlargethispage{-0.75\baselineskip}}]
+
+
+\usepackage{fancyhdr}					% Package to redefine headers
+\fancyhf{}								% No header nor footer
+\fancyhead[L]{\thepage}				% Left even and right odd Page Number
+\pagestyle{fancy}
+
+\fancypagestyle{plain}{					% To change the footer on chapter and chapter*
+	\fancyhf{}							% No header nor footer
+%	\fancyfoot[C]{\vspace{-11mm}\thepage}	% Footer with number displaced
+	\renewcommand{\headrulewidth}{0pt}	% No line on header
+	\renewcommand{\footrulewidth}{0pt}		% No line on footer
+}
+
+\RequirePackage{caption} 				% Caption customization
+\captionsetup{justification=centerlast,font=small,labelfont=sc,margin=1cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=blue,    
+}
+
+% Setup the language and its properties (choose only one)
+\usepackage[spanish, es-tabla, es-nodecimaldot]{babel}
+\addto\captionsspanish{\renewcommand{\contentsname}{Contenido}}
+%\usepackage[english]{babel}
+%\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+
+
+%\graphicspath{ {figs/} }					% Use this if custom figures folder is needed
+
+\usepackage{amssymb,amsmath}
+\usepackage[square, numbers]{natbib}		% Bibliography
+\usepackage{tikz}						% Required for title page
+\usetikzlibrary{babel}						% Required to make TikZ works with babel
+\usepackage[section]{placeins}				% To flush floats before new section
+\usepackage{longtable}					% Used by List of Symbols and friends
+\usepackage{array}						% Needed by longtable package
+\usepackage{graphicx}
+
+%para el color del texto
+\usepackage{color}
+
+%para poder poner H en imagenes
+\usepackage{float}
+
+%para poder importar excel
+\usepackage{csvsimple}
+\usepackage{booktabs}
+
+%Para dibujar circuitos
+\usepackage{circuitikz}
+\usepackage[demo]{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{matrix,calc}
+% Macros provided
+\def\fecha{\ifcase\month\or
+  Enero\or Febrero\or Marzo\or Abril\or Mayo\or Junio\or
+  Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi \space\number\year
+}
+\newcommand*{\subtitle}[1]{\gdef\@subtitle{#1}}
+\newcommand*{\group}[1]{\gdef\@group{#1}}
+\newcommand*{\profesor}[1]{\gdef\@profesor{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%karnaugh%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%internal group
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicant}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#3.south east)+(-45:#1)$);
+    }
+
+%group lateral borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantcostats}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.east |- #2.north)+(90:#1)$)-| ($(#2.east)+(0:#1)$) |- ($(rf.east |- #3.south)+(-90:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.west |- #2.north)+(90:#1)$) -| ($(#3.west)+(180:#1)$) |- ($(cf.west |- #3.south)+(-90:#1)$);
+}
+
+%group top-bottom borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantdaltbaix}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.south -| #2.west)+(180:#1)$) |- ($(#2.south)+(-90:#1)$) -| ($(cf.south -| #3.east)+(0:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.north -| #2.west)+(180:#1)$) |- ($(#3.north)+(90:#1)$) -| ($(rf.north -| #3.east)+(0:#1)$);
+}
+
+%group corners
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - filling color
+\newcommand{\implicantcantons}[2][0]{
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -| ($(0.east |- cf.south)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$);
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -|  ($(0.east |- cf.south)+(0:#1)$) [sharp corners] ($(rf.east |- 0.south)+(-90:#1)$) |-  ($(0.east |- cf.south)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$) [sharp corners] ($(rf.east |- 8.north)+(90:#1)$) |- ($(8.east |- rf.north)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$) [sharp corners]($(cf.west |- 2.south)+(-90:#1)$) |- ($(2.west |- cf.south)+(180:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$) [sharp corners] ($(cf.west |- 10.north)+(90:#1)$) |- ($(10.west |- rf.north)+(180:#1)$) ;
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{Karnaugh}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {ab} node [pos=0.7,below left,anchor=north east] {cd} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 00             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 01             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| 11             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| 10             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{Karnaughvuit}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {AB} node [pos=0.7,below left,anchor=north east] {C} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| 00         \& |(c01)| 01         \& |(c11)| 11         \& |(c10)| 10         \& |(cf)| \phantom{00} \\
+|(r00)| 0             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| 1             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x2
+\newenvironment{Karnaughquatre}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (2,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {b} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=2.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+          \& |(c00)| 0          \& |(c01)| 1  \\
+|(r00)| 0 \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \\
+|(r01)| 1 \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Defines 8 or 16 values (0,1,X)
+\newcommand{\contingut}[1]{%
+\foreach \x [count=\xi from 0]  in {#1}
+     \path (\xi) node {\x};
+}
+
+%Places 1 in listed positions
+\newcommand{\minterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {1};
+}
+
+%Places 0 in listed positions
+\newcommand{\maxterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {0};
+}
+
+%Places X in listed positions
+\newcommand{\indeterminats}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {X};
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%end karnaugh%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+\begin{document}
+\input{preamble/title_data.tex}
+\input{preamble/title_page.tex}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+\input{sections/ejercicio1.tex}
+\newpage
+\input{sections/ejercicio2.tex}
+\newpage
+\input{sections/ejercicio3.tex}
+\newpage
+\input{sections/ejercicio4.tex}
+\newpage
+\input{sections/ejercicio5.tex}
+\newpage
+\input{sections/ejercicio6.tex}
+\newpage
+\input{sections/ejercicio7.tex}
+\newpage
+\input{sections/conclusion.tex}
+\end{document}
