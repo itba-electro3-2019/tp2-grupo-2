@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=Vcc Pin=U1-1
+Removed Pin From Net: NetName=Vcc Pin=U1-3
+Removed Pin From Net: NetName=Vcc Pin=U1-13
+Removed Pin From Net: NetName=Vcc Pin=U1-15
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-3
+Added Pin To Net: NetName=GND Pin=U1-13
+Added Pin To Net: NetName=GND Pin=U1-15
+Added Room: Name=display

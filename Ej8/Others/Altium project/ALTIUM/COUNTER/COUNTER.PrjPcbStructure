@@ -1,0 +1,6 @@
+Record=TopLevelDocument|FileName=top_sheet.SchDoc
+Record=SheetSymbol|SourceDocument=top_sheet.SchDoc|Designator=Clock 1|SchDesignator=Clock 1|FileName=clock1.SchDoc|SymbolType=Normal|RawFileName=clock1.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=top_sheet.SchDoc|Designator=Clock 2|SchDesignator=Clock 2|FileName=clock2.SchDoc|SymbolType=Normal|RawFileName=clock2.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=top_sheet.SchDoc|Designator=COMPARATOR|SchDesignator=COMPARATOR|FileName=comparator.SchDoc|SymbolType=Normal|RawFileName=comparator.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=top_sheet.SchDoc|Designator=COUNTER|SchDesignator=COUNTER|FileName=COUNTER.SchDoc|SymbolType=Normal|RawFileName=COUNTER.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=top_sheet.SchDoc|Designator=Regulador|SchDesignator=Regulador|FileName=regulador.SchDoc|SymbolType=Normal|RawFileName=regulador.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
