@@ -159,9 +159,9 @@ $V_{OH}$         & 2,7                    \\ \hline
 %
 \noindent
  Por lo tanto, se mide el tiempo entre que la entrada vale $2,5625V$ hasta que la salida vale $2,7V$. En la Figura \ref{ej7_fig:asinc_measure1} se muestra la medici\'on del tiempo de retardo del bit $Q_2$, de donde se tiene que:
- \begin{equation}
+ \begin{equation*}
      t_P = 63,3ns
- \end{equation} 
+ \end{equation*} 
 %
 \begin{figure}[H]
 	\centering
@@ -207,6 +207,8 @@ Para la medici\'on se toman los mismos par\'ametros que en la Subsecci\'on \ref{
 	\label{ej7_fig:sinc_q0_meas}
 \end{figure}
 \noindent
+El valor del tiempo de propagaci\'on es mayor al esperado de los datos del fabricante, ya que deber\'ia ser menor al $t_{PLH}$ m\'aximo, 25$ns$. Sin embargo, se atribuye la diferencia de 7$ns$ al error de medici\'on, ya que la salida
+del circuito no tomaba un valor estable, sino que cambiaba mucho y para la medici\'on se utiliz\'o una sola curva.
 Si bien por ser sincr\'onico \'este tiempo deber\'ia ser igual para los 3 bits, se midieron los otros dos bits de la misma forma y se obtuvieron los valores de la Tabla \ref{ej7_tab:t_prop_all}.
 %
 \begin{table}[H]
