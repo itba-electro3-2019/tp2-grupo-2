@@ -4,7 +4,7 @@ El objetivo de este ejercicio es dise\~nar la compuerta l\'ogica NOT mediante la
 \vspace{10mm}
 
 
-{\large\textbf{Tecnolog\'ia RTL}}\newline
+{\large\textbf{Tecnolog\'ia RTL}}
 \noindent
 A continuaci\'on se presenta el circuito utilizado para la realizaci\'on de la compuerta NOT mediante esta tecnolog\'ia.
 
@@ -14,13 +14,13 @@ A continuaci\'on se presenta el circuito utilizado para la realizaci\'on de la c
     \caption{Compuerta NOT con tecnolog\'ia RTL.}
 \label{fig:ej1_rtl}
 \end{figure}
-\noindent\newline
+\noindent
 El funcionamiento de esta tecnolog\'ia se basa en que Vcc, la alimentaci\'on, se mantiene con una tensi\'on constante, por ejemplo 5V, mientras que en la entrada la tensi\'on puede variar. Si la tensi'on en la base del transistor representa un '0' l\'ogico, el transistor no conduce y por lo tanto, a la salida habr\'a un '1' l\'ogico. Por el otro lado, si se aplica un '1' l\'ogico en la base del transistor, comienza a conducir y la tensi\'on entre el colector y el emisor ser\'a de aproximadamente 0.3V representando un '0' l\'ogico.
 
 \vspace{10mm}
 
 
-{\large\textbf{Tecnolog\'ia TTL}}\newline
+{\large\textbf{Tecnolog\'ia TTL}}
 \noindent
 La compuerta NOT mediante tecnolog\'ia ttl funciona de la siguiente manera:
 
@@ -37,7 +37,7 @@ El transistor Q2 trabaja tanto en directa como en inversa para dirigir la corrie
 \vspace{10mm}
 
 
-{\large\textbf{Tecnolog\'ia MOS}}\newline
+{\large\textbf{Tecnolog\'ia MOS}}
 \noindent
 
 \begin{figure}[H]
@@ -46,7 +46,7 @@ El transistor Q2 trabaja tanto en directa como en inversa para dirigir la corrie
     \caption{Compuerta NOT con tecnolog\'ia MOS.}
 \label{fig:ej1_mos}
 \end{figure}
-\noindent\newline
+\noindent
 
 Se puede notar que el circuito es muy similar al rtl analizado previamente pero con un NMOS en lugar de BJT y sin la resistencia de base ya que en un MOS no circula corriente por ah\'i. Nuevamente con la tensi\'on de alimentaci\'on en 5V se analiza que pasa al aplicar a la entrada un '1' o un '0'. Si se inserta un '1', el transistor comienza a conducir y la tensi\'on entre base y emisor es de 5V por lo tanto a la salida se ve un '0'. Al insertar a la entrada un '0', el transistor no conduce y a la salida se ve un '1'.
 
