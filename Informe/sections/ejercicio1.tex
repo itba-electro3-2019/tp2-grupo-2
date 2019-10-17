@@ -105,20 +105,19 @@ High-level output voltage.                & 4.87V                     & 4.99V   
 Low-level output voltage.                 & 0.247V                    & 0.067V                   & 0.18V                               \\ \hline
 Noise margin high.                        & 3.85V                     & 4.168V                   & 2.75V                               \\ \hline
 Noise margin low.                         & 0.296V                    & 0.248V                   & 1.41V                               \\ \hline
-Propagation delay high to low.            & 8.25\mu s                    & 7.7\mu s                    & 6.2\mu s                             \\ \hline
-Propagation delay low to high.            & 205ns                     & 46.8ns                   & 135ns                              \\ \hline
-Transition time high to low.              & 146ns                     & 71ns                     & 1.12\mu s                               \\ \hline
-Transition Time low to high.              & 25.7\mu s                    & 21.1\mu s                   & 23\mu s                                \\ \hline
-Maximum output current.                   & \multicolumn{1}{l|}{11mA} & \multicolumn{1}{l|}{3mA} & \multicolumn{1}{l|}{28.2mA}         \\ \hline
+Propagation delay high to low.            & 8.25$\mu s$               & 7.7$\mu s$               & 6.2$\mu s$                             \\ \hline
+Propagation delay low to high.            & 205$ns$                   & 46.8$ns$                 & 135$ns$                              \\ \hline
+Transition time high to low.              & 146$ns$                   & 71$ns$                   & 1.12$\mu s$                               \\ \hline
+Transition Time low to high.              & 25.7$\mu s$               & 21.1$\mu s$              & 23$\mu s$                                \\ \hline
+Maximum output current.                   & \multicolumn{1}{l|}{11$mA$} & \multicolumn{1}{l|}{3$mA$} & \multicolumn{1}{l|}{28.2$mA$}         \\ \hline
 \end{tabular}
 \caption{Tabla de valores medidos con carga.}
 \label{tab:ej1_con_carga}
 \end{table}
 \noindent
-
-'\#\#\#' significa que ese valor no pudo ser medido debido a las limitaciones del osciloscopio (\textit{Time rise} m\'inimo de 13ns).
+'\#\#\#' significa que dicho valor no pudo ser medido debido a las limitaciones del osciloscopio (\textit{Time rise} m\'inimo de 13ns).
 \noindent\newline
-\vspace{5}
+\vspace{5mm}
 \newline
 En primer lugar, se puede observar de las mediciones hechas que el hecho de que el circuito tenga la carga de 1nF o que no lo tenga casi no afecta las tensiones de entrada ni las de salida. Mientras que por otro lado, produce que todos los tiempos, tanto de propagaci\'on como de transici\'on, aumenten, es decir, los circuitos son mas lentos con carga. \newline
 Luego, se puede notar que la tecnolog\'ia TTL es la m\'as r\'apida en todos los tiempos, entre RTL y MOS, RTL es mas r\'apida en los tiempos de transici\'on pero es mas lenta en los de propagaci\'on. La gran ventaja de la tecnolog\'ia RTL es el hecho de que utiliza menos transistores que TTL. Finalmente, se puede observar que la compuerta NOT con MOS es la que presenta una mayor corriente de salida, por lo tanto es la que tiene mayor \textit{fanout}.
