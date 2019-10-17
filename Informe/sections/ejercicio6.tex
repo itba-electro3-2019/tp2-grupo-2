@@ -39,7 +39,7 @@ S & R & Qa & Qb \\ \hline \hline
 \end{table}
 %
 \noindent
-De esta forma se trabajó con compuertas NOR para la creación del Latch, para eso se consideró interesante trabajar con compuertas lógicas CD4001B, ya que las mismas son más lentas que las compuertas 74HC02 y hay mayor disponibilidad de ellas en el pañol de la facultad.
+De esta forma se trabajó con compuertas NOR para la creación del Latch, para eso se consideró interesante trabajar con compuertas lógicas CD4001B, ya que las mismas son más lentas que las compuertas 74HC02 y hay mayor disponibilidad de ellas en el pañol de la facultad. Las hojas de datos de dichas compuertas se pueden encontrar en los siguientes links \href{http://www.ti.com/lit/ds/symlink/cd4001b-mil.pdf}{CD4001b}, \href{http://www.ti.com/lit/ds/symlink/sn74hc02.pdf}{74HC02}.
 %
 \subsubsection{Mediciones y Conclusiones.}
 %
@@ -67,7 +67,7 @@ Así se midió el cambio en la salida cuando Reset esta en cero y Set cambia de 
 De forma análoga se midieron los tiempos de fall y de propagación al pasar de 1 a cero en la salida es decir con set en 0 y reset en 1.\\
 %
 \noindent
-Así, los tiempos que se obtuvieron se muestran en la tabla \ref{ej6_tabla_mediciones_latch} junto con los tiempos de una compuerta representativa de un latch SR comercial, de esta forma, para la comparación se utilizó la compuerta M74HC279C1R de la marca ST. 
+Así, los tiempos que se obtuvieron se muestran en la tabla \ref{ej6_tabla_mediciones_latch} junto con los tiempos de una compuerta representativa de un latch SR comercial, de esta forma, para la comparación se utilizó la compuerta M74HC279C1R de la marca ST, la hoja de datos de la misma se puede encontrar en el siguiente link \href{http://pdf.datasheetcatalog.com/datasheets2/24/245012_1.pdf}{74HC279}.
 %
 \begin{table}[H]
 \caption{Tabla con los valores de las mediciones tomadas (valores en nano segundos)}
@@ -130,15 +130,16 @@ X & X                       & $Qa_{-1}$ & $Qb_{-1}$ \\ \hline
 \end{table}
 %
 \noindent
-De esta manera para implementar al circuito en placa PCB se decidió utilizar los integrados 74HC08 para las compuertas And, 74HC00 para las compuertas Nand y 74HC02 para las compuertas Nor, utilizando una compuerta nor para la compuerta not que requiere el flip flop, como se puede ver en la figura \ref{ej6_flip_flop_D}.
+De esta manera para implementar al circuito en placa PCB se decidió utilizar los integrados 74HC08 para las compuertas And, 74HC00 para las compuertas Nand y 74HC02 para las compuertas Nor, utilizando una compuerta nor para la compuerta not que requiere el flip flop, como se puede ver en la figura \ref{ej6_flip_flop_D}. Las hojas de datos de los componentes utilizados se pueden consultar en los siguientes links \href{http://www.ti.com/lit/ds/symlink/sn74hc08.pdf}{74HC08}, \href{http://www.ti.com/lit/ds/symlink/sn74hc02.pdf}{74HC02}, \href{http://www.ti.com/lit/ds/symlink/sn74hc00.pdf}{74HC00}.
 %
+
 \subsubsection{Mediciones y Conclusiones}
 \noindent
 De esta manera se procedió análogamente al caso del latch SR, es decir, se midieron los tiempos de subida y bajada a la salida de la compuerta, considerando (al igual que en el caso anterior) que el tiempo de rise o subida comienza cuando la salida vale 10\% del valor tomado como High y termina cuando vale 90\% del valor tomado como High. El caso del tiempo de bajada es análogo pero a la inversa, es decir comienza cuando la salida es 90\% del valor High y finaliza cuando el mismo es del 10\% del valor de High.\\
 %
 También es análogo el tratamiento de los tiempos de propagación del circuito, sólo que aquí la entrada que cambia es D es decir cuando D cambia de cero a uno se obtiene el tiempo de propagación $T_{PLH}$ y cuando la entrada D cambia de uno a cero se obtiene $T_{PHL}$, ambos tiempos medidos como en la figura \ref{ej6_latch_imagen2}, es decir desde que la señal de input alcanza el 50\% de su valor considerado como high hasta que la señal de salida del sistema llega al 50\% de su valor considerado como high.\\
 %
-Para los valores correspondientes a un flip flop D comercial, se decidió contrastar las mediciones tomadas con el flip flop D 74HC74, se optó por el mismo ya que se encuentra en el pañol de la facultad y es el equivalente al utilizado en el ejercicio 7 (74LS74) pero que trabaja con la misma tecnología que las compuertas utilizadas en nuestro caso, a saber, tecnología CMOS. Si bien cabe destacar que el SN74HC74 es de flanco positivo mientras que nuestro flip flop D es de flanco negativo.\\
+Para los valores correspondientes a un flip flop D comercial, se decidió contrastar las mediciones tomadas con el flip flop D 74HC74, se optó por el mismo ya que se encuentra en el pañol de la facultad y es el equivalente al utilizado en el ejercicio 7 (74LS74) pero que trabaja con la misma tecnología que las compuertas utilizadas en nuestro caso, a saber, tecnología CMOS. Si bien cabe destacar que el SN74HC74 es de flanco positivo mientras que nuestro flip flop D es de flanco negativo. La hoja de datos del componente se puede revisar en el siguiente link \href{http://www.ti.com/lit/ds/symlink/sn74hc74-ep.pdf}{74HC74}.\\
 De esta manera los resultados obtenidos de las mediciones del circuito y los que se pueden encontrar en la hoja de datos del SN74HC74 se muestran en la tabla \ref{ej6_tabla_flip_flop_mediciones}.
 %
 \begin{table}[H]
