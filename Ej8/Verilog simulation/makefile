@@ -1,7 +1,7 @@
 # This makefile is inspired from: https://stackoverflow.com/questions/7004702/how-can-i-create-a-makefile-for-c-projects-with-src-obj-and-bin-subdirectories
 
 # project name (generate executable with this name)
-TARGET   = test
+TARGET   = simulation
 
 GTKWAVE = gtkwave
 VCD_OUTPUT = output.vcd
@@ -15,8 +15,8 @@ SRCDIR   = src
 BINDIR   = bin
 
 SOURCES  := $(wildcard $(SRCDIR)/*.v)
-OBJECTS  := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 rm       = rm -f
+RELOAD 	 = gconftool-2 --type string --set /com.geda.gtkwave/0/reload 0
 
 $(BINDIR)/$(TARGET): $(SOURCES)
 	@mkdir -p bin
@@ -32,6 +32,12 @@ run: $(BINDIR)/$(TARGET)
 view: run
 	@echo "Viewing simulation!"
 	@$(GTKWAVE) $(BINDIR)/$(VCD_OUTPUT) >/dev/null 2>&1 &
+
+.PHONY: reload
+reload: run
+	@echo "Reloading simulation!"
+	@cd $(BINDIR)
+	@$(RELOAD)
 
 .PHONY: clean
 clean: 

@@ -1,6 +1,5 @@
 `timescale 100us / 100us
 module delay(in, out);
-parameter GRILLA = 100us;
 input in;
 output wire out;
 
