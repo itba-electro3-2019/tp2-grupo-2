@@ -1,5 +1,6 @@
-Bienvenido a la simulacion!
+Bienvenido al ejercicio 8!
 
+Para la simulación en Verilog, diríjase a la carpeta "Verilog Simulation". Allí:
 -Para compilar: "make"
 -Para correr el programa: "make run"
 -Para ver la simulacion en GTKWave: "make view"
