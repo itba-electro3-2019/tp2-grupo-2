@@ -22,7 +22,10 @@ module SincCounter(out, clk, reset, enable);
 
   always @(posedge clk)
     if(enable)
-      out <= out + 1;
+    begin
+      $display("Counting");
+      out <= out + 1;      
+    end
 
   always @reset
     if (reset)

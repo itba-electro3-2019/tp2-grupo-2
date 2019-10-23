@@ -1,13 +1,14 @@
+`timescale 10ns / 10ns
 
-/* MODULO DE MULTIVIBRADORES IDEALES */
+/* MODULO DE REGISTROS */
 
 
 /*  REGISTRO SINCRONICO: Su salida solo cambia con flancos ascendentes de clk 
-        *Si reset_n = 0, la salida es 0     */
+*           -Si reset_n = 0, la salida es 0     */
 
 module SincRegister(out, in, clk, reset_n);
 
-parameter WIDTH = 8;
+parameter WIDTH = 8, DELAY = 0;
 
 output reg [WIDTH-1:0]out;
 input [WIDTH-1:0]in;
@@ -16,7 +17,7 @@ input clk, reset_n;
 
 always @(posedge clk)
 begin
-    out <= in;
+    #(DELAY) out <= in;
 end
 
 always @(reset_n)
@@ -33,25 +34,18 @@ endmodule
 
 module AsincRegister(out, in, str);
 
-parameter WIDTH = 8;
+parameter WIDTH = 8, DELAY = 0;
 
 output reg [WIDTH-1:0]out;
 input [WIDTH-1:0]in;
 input str;
 
-/*
-initial 
-begin
-    if(str)
-        assign out = in;    
-    else
-        deassign out;    
-end
-*/
 always @(str)
 begin
     if(str)
-        assign out = in;    
+    begin
+        #(DELAY) assign out = in;    
+    end
     else
         deassign out;
 end

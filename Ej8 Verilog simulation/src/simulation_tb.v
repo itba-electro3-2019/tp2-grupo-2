@@ -7,31 +7,27 @@ module simulation_tb;
 
     reg comp; 
     wire [WIDTH-1:0] validCount, sevenSegOut;
-    integer countInt, validCountInt, showedCountInt, sevenSegOutInt;  //Variables para poder ver los valores en decimal en GTKWave
-    // simulation #( .PERIOD(1e3) ) simulate(comp, count, validCount, showedCount, SevenSegOut);
+    integer countInt, sincRegInt, asincRegInt, displayInt;  //Variables para poder ver los valores en decimal en GTKWave
     simCount #( .PERIOD(1e3) ) numObtainer(validCount, comp);
     simDisplay displayer(sevenSegOut, validCount);
 
     always@(numObtainer.count)
-        countInt = numObtainer.count;   
+        countInt = numObtainer.count;
     always@(validCount)
-        validCountInt = validCount;  
+        sincRegInt = validCount;  
     always@(displayer.showedCount)
-        showedCountInt = displayer.showedCount;  
+        asincRegInt = displayer.showedCount;  
     always@(sevenSegOut)
-        sevenSegOutInt = sevenSegOut;   
+        displayInt = sevenSegOut;   
 
     integer i;
 
     initial
     begin
-        for( i=0; i<100 ; i=i+1 )
+        for( i=0; i<100 ; i=i+1 )   //simulamos para tensiones del joystick aumentando de 0 a 5V de, para salida de 0 a 99
         begin
             compare(i*2e3, PERIOD);    
         end
-        // compare(30e3, PERIOD);
-        // compare(80e3, PERIOD);
-        // compare(90e3, PERIOD);
         $finish;
     end
     
@@ -44,11 +40,10 @@ module simulation_tb;
     initial begin
     dummy = $value$plusargs("VCD_PATH=%s", dumpfile_path);
     $dumpfile(dumpfile_path);
-    $dumpvars(0, comp, countInt, validCountInt, showedCountInt, sevenSegOutInt, numObtainer.clk1, numObtainer.clk2, displayer.clk3 );
+    $dumpvars(0, comp, countInt, sincRegInt, asincRegInt, displayInt, numObtainer.clkCount, numObtainer.clkTriang, displayer.clkDisp );
     end
 
-
-    /* Funcion para simular la salida del comparador. T_on en la realidad depende de la tension que tenga el joytick */
+    /* Funcion para simular la salida del comparador. t_on en la realidad depende de la tension que tenga el joytick */
     task compare;
         input integer t_on, period;
         begin
@@ -60,6 +55,5 @@ module simulation_tb;
             #(t_on/2);
         end
     endtask 
-
 
 endmodule
