@@ -40,11 +40,7 @@
 	\renewcommand{\footrulewidth}{0pt}		% No line on footer
 }
 
-\RequirePackage{captpromedio = item_1_d
-hold on
-plot(0:100, promedios)
-ylabel('Capital estimado')
-xlabel('Numero de ronda')ion} 				% Caption customization
+\RequirePackage{caption}
 \captionsetup{justification=centerlast,font=small,labelfont=sc,margin=1cm}
 
 \hypersetup{
@@ -104,7 +100,9 @@ xlabel('Numero de ronda')ion} 				% Caption customization
 \newpage
 %
 \section{Introducci\'on}
-El objetivo del presente trabajo es leer la posici\'on de un \textit{joystick} y mostrarla en un \textit{display} representada por numero entre 0 y 99, con una tasa de refresco de entre 1 y 20 veces por segundo. El \textit{joystick} est\'a compuesto por un potenci\'ometro en cada eje y es alimentado con 5V por lo tanto a la salida se tendr\'an tensiones entre 0V y 5V. Se busca mostrar esa se\~nal en un \textit{display} 7 segmentos de forma que si la tensi\'on es m\'inima, se muestre un 0, con el aumento de la tensi\'on crezca linealmente el n\'umero y si se tiene tensi\'on m\'axima se muestre un 99.
+El objetivo del presente trabajo es leer la posici\'on de un \textit{joystick} y mostrarla en un \textit{display} representada por numero entre 0 y 99, con una tasa de refresco de entre 1 y 20 veces por segundo. 
+El \textit{joystick} est\'a compuesto por un potenci\'ometro en cada eje y se le proveen 5V, por lo tanto a la salida se tendr\'an tensiones entre 0V y 5V. Se busca mostrar esa se\~nal en un \textit{display} 7 segmentos de forma que si la tensi\'on es m\'inima, se muestre un 0, con el aumento de la tensi\'on crezca linealmente el n\'umero y si se tiene tensi\'on m\'axima se muestre un 99.
+Se presenta el desarrollo del diseño del circuito y su correspondiente validaci\'on con diagramas temporales realizados con la herramienta GTKWave a partir de la simulaci\'on realizada en Verilog.
 \newpage
 
 \section{Modularizaci\'on del circuito}
@@ -199,11 +197,11 @@ Como la triangular no arranca desde 0V, se coloca el circuito sumador inversor c
 %
 \subsubsection{Selecci\'on de valores de componentes}
 \noindent
-Para la obtenci\'on de la señal cuadrada de 50$Hz$, utilizando la Ecuaci\'on \ref{eq:clk2_freq} se fija el valor del capacitor C=470$nF$ y las resistencias $R_1=R_2=100k\Omega$ para tener corrientes bajas pero sin llegar a $M\Omega$ para no introducir ruido. Con estos valores se obtiene $R=19366\Omega$. Como el valor de \'esta frecuencia debe ser muy preciso, se coloca un preset de 50$k\Omega$ en el lugar de R para ajustarla.\newline
-Luego, para el circuito integrador, se busca que la frecuencia de corte sea menor a 5$Hz$, utilizando la Ecuaci\'on \ref{eq:integrador} se utilizan $C_2=68nF$ y $R_4 = 470k\Omega$.
-Para el divisor resistivo, se midi'o que a la salida del \textit{clock} se una tensi\'on m\'axima de 13,5V, por lo tanto, utilizando la ecuaci\'on \ref{eq:divisor_resist} se utilizan $R_9=560k\Omega$ y $R_{10}=330k\Omega$ para que el \textit{clock} que se conecta a la entrada de otros componentes no supere 5,1V.\newline
-Finalmente, para el circuito sumador inversor, utilizando la ecuaci\'on \ref{eq:sumador}, se busca que la tensi\'on pico a pico pueda ser ajustable para lograr mayor precisi\'on considerando que si $R_6=R_8$ el circuito no deber\'ia amplificar, por lo tanto, se define $R_6=100k\Omega$ y en lugar de R_8 se coloca un \textit{preset} de $50k\Omega$ en serie con una resistencia de $91k\Omega$.
-Para el sumador,  se observa el segundo t\'ermino de la ecuaci\'on \ref{eq:sumador}, de donde se puede ver que con los valores de R_8 y R_6 fijados se selecciona $R_5=510k\Omega$ llegando asi a un valor de $R_7 = 100k\Omega$ que ser\'a un \textit{preset} para poder ajustarlo con precisi\'on ya que depender\'a del valor del \textit{preset} de R_8.
+Para la obtenci\'on de la señal cuadrada de 50$Hz$, utilizando la Ecuaci\'on \ref{eq:clk2_freq} se fija el valor del capacitor C=470$nF$ y las resistencias $R_1=R_2=100k\Omega$ para tener corrientes bajas pero sin llegar a $M\Omega$ para no introducir ruido. Con estos valores se obtiene $R=19,366k\Omega$. Como el valor de \'esta frecuencia debe ser muy preciso, se coloca un preset de 50$k\Omega$ en el lugar de R para ajustarla.\newline
+Luego, para el circuito integrador, se busca que la frecuencia de corte sea menor a 5$Hz$, de modo que, utilizando la Ecuaci\'on \ref{eq:integrador}, se eligen $C_2=68nF$ y $R_4 = 470k\Omega$. El valor de $R_4$ determina la ganancia, se elige $R_4=360k\Omega$.
+Para el divisor resistivo, se midi'o previamente a la salida del amplificador operacional una tensi\'on de saturaci\'on de 13,5V, por lo tanto, utilizando la Ecuaci\'on \ref{eq:divisor_resist} se eligen $R_9=560k\Omega$ y $R_{10}=330k\Omega$ para que el \textit{clock} que se conecta a la entrada de otros componentes no supere 5,1V.\newline
+Finalmente, para el circuito sumador inversor, utilizando la Ecuaci\'on \ref{eq:sumador}, se busca que la tensi\'on pico a pico pueda ser ajustable para lograr una señal triangular exactamente de 0 a 5V, por lo tanto, se define $R_6=100k\Omega$ y en lugar de R_8 se coloca un \textit{preset} de $50k\Omega$ en serie con una resistencia de $91k\Omega$.
+Para el sumador, se observa el segundo t\'ermino de la Ecuaci\'on \ref{eq:sumador}, de donde se puede ver que con los valores de $R_8$ y $R_6$ fijados, fijando $R_5=510k\Omega$, $R_7$ determina la tensi\'on que se suma. Se coloca un \textit{preset} de 100$k\Omega$ en el lugar de $R_7$ para poder desplazar verticalmente la señal triangular.
 %
 \subsection{Señal de clock con NE555}
 %
