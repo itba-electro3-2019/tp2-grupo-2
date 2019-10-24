@@ -40,7 +40,11 @@
 	\renewcommand{\footrulewidth}{0pt}		% No line on footer
 }
 
-\RequirePackage{caption} 				% Caption customization
+\RequirePackage{captpromedio = item_1_d
+hold on
+plot(0:100, promedios)
+ylabel('Capital estimado')
+xlabel('Numero de ronda')ion} 				% Caption customization
 \captionsetup{justification=centerlast,font=small,labelfont=sc,margin=1cm}
 
 \hypersetup{
@@ -175,6 +179,7 @@ Luego, la cuadrada pasa por el integrador compensado, cuya transferencia viene d
 Se observa que la frecuencia de corte, a partir de la cual comienza a integrar, es:
 \begin{equation}
     f_c = \frac{1}{2 \pi R_4 C_2}
+    \label{eq:integrador}
 \end{equation}
 Para asegurarse una correcta integraci\'on se busca que: 
 \begin{equation*}
@@ -184,16 +189,21 @@ Siendo f la frecuencia de la señal a integrar.\\
 Por \'ultimo, para ajustar los valores de ambas señales a las necesidades del circuito, se utilizan los circuitos restantes de la figura. Para llevar la cuadrada de 0 a 5V, se agregan un diodo y un divisor resistivo, y se coloca un buffer a la salida para mantener constante dicha tensi\'on. La tensi\'on a la salida del buffer es de:
 \begin{equation}
     V_{cuad} = V_{sat} \frac{R_{10}}{R_9 + R_{10}}
+    \label{eq:divisor_resist}
 \end{equation}
 Como la triangular no arranca desde 0V, se coloca el circuito sumador inversor con el cuarto amplificador operacional, para poder sumarle la tensi\'on necesaria para que arranque de 0V. En caso de tambi\'en querer ajustar la tensi\'on pico a pico de la triangular, se puede hacer con las resistencias $R_6$ y $R_8$. La tensi\'on a la salida del sumador inversor se obtiene mediante:
 \begin{equation}
-    V_o = - \Lambda(t) \cdot \frac{R_{8}}{R_{6}} + V_{cc}\cdot \frac{R_7}{R_5 + R_7} \frac{R_6 + R_8}{R_6} 
+    V_o = - \Lambda(t) \cdot \frac{R_{8}}{R_{6}} + V_{cc}\cdot \frac{R_7}{R_5 + R_7} \frac{R_6 + R_8}{R_6}
+    \label{eq:sumador}
 \end{equation}
 %
 \subsubsection{Selecci\'on de valores de componentes}
 \noindent
 Para la obtenci\'on de la señal cuadrada de 50$Hz$, utilizando la Ecuaci\'on \ref{eq:clk2_freq} se fija el valor del capacitor C=470$nF$ y las resistencias $R_1=R_2=100k\Omega$ para tener corrientes bajas pero sin llegar a $M\Omega$ para no introducir ruido. Con estos valores se obtiene $R=19366\Omega$. Como el valor de \'esta frecuencia debe ser muy preciso, se coloca un preset de 50$k\Omega$ en el lugar de R para ajustarla.\newline
-Luego, para el circuito integrador, 
+Luego, para el circuito integrador, se utiliza la ecuaci\'on \ref{eq:integrador} y fijando el valor del capacitor $C_2=68nF$ se llega a que $R_4 = 470k\Omega$.
+Para el divisor resistivo, se midi'o que a la salida del \textit{clock} se ten\'ia una se\~nal de -13V a 13V aproximadamente, por lo tanto, utilizando la ecuaci\'on \ref{eq:divisor_resist} se llega a que $R_9=560k\Omega$ y $R_{10}=330k\Omega$.\newline
+Finalmente, para el circuito sumador inversor utilizando la ecuaci\'on \ref{eq:sumador}, se busca que la tensi\'on pico a pico pueda ser ajustable para lograr mayor precisi\'on considerando que si $R_6=R_8$ el circuito no deber\'ia amplificar, por lo tanto, se define $R_6=100k\Omega$ y en lugar de R_8 se coloca un \textit{preset} de $50k\Omega$ en serie con una resistencia de $91k\Omega$.
+Para el sumador,  se observa el segundo t\'ermino de la ecuaci\'on \ref{eq:sumador}, de donde se puede ver que con los valores de R_8 y R_6 fijados se selecciona $R_5=510k\Omega$ llegando asi a un valor de $R_7 = 100k\Omega$ que ser\'a un \textit{preset} para poder ajustarlo con precisi\'on ya que depender\'a del valor del \textit{preset} de R_8.
 %
 \subsection{Señal de clock con NE555}
 %
@@ -331,9 +341,5 @@ El otro problema que se afront\'o fue en la salida del comparador, al pasar de e
 	\label{fig:salida_comp}
 \end{figure}
 %
-\newpage
-\section{Conclusi\'on}
-%nombrar que solucionamos problemas y bla
-
 
 \end{document}
